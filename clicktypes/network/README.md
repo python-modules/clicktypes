@@ -2,6 +2,16 @@
 
 These types are useful for IP networking purposes.
 
+- [Clicktypes - Networking](#clicktypes---networking)
+  - [Network Addresses](#network-addresses)
+    - [IPNetworkParam](#ipnetworkparam)
+    - [IPv4NetworkParam](#ipv4networkparam)
+    - [IPv6NetworkParam](#ipv6networkparam)
+  - [IP Addresses](#ip-addresses)
+    - [IPAddressParam](#ipaddressparam)
+    - [IPv4AddressParam](#ipv4addressparam)
+    - [IPv6AddressParam](#ipv6addressparam)
+
 ## Network Addresses
 
 IPv4/IPv6 network parameter types. The following types are available:
@@ -54,5 +64,60 @@ from clicktypes.network import IPv6NetworkParam
     nargs           = -1,
     required        = True,
     type            = IPv6NetworkParam(),
+)
+```
+
+## IP Addresses
+
+IPv4/IPv6 IP address parameter types. The following types are available:
+
+### IPAddressParam
+
+Validate and normalize provided value into an IPv4Address or IPv6Address object.
+
+Example usage:
+
+```python
+from clicktypes.network import IPAddressParam
+
+@click.argument(
+    'ip',
+    nargs           = -1,
+    required        = True,
+    type            = IPAddressParam(),
+)
+```
+
+### IPv4AddressParam
+
+Validate and normalize provided value into an IPv4Address object.
+
+Example usage:
+
+```python
+from clicktypes.network import IPv4AddressParam
+
+@click.argument(
+    'ip',
+    nargs           = -1,
+    required        = True,
+    type            = IPv4AddressParam(),
+)
+```
+
+### IPv6AddressParam
+
+Validate and normalize provided value into an IPv6Address object.
+
+Example usage:
+
+```python
+from clicktypes.network import IPv6AddressParam
+
+@click.argument(
+    'ip',
+    nargs           = -1,
+    required        = True,
+    type            = IPv6AddressParam(),
 )
 ```

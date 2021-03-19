@@ -2,6 +2,14 @@
 
 Python `clicktypes` changelog.
 
+## [0.0.2] - 2020-03-20
+
+- [Add IP address params](clicktypes/network/README.md):
+  - IPAddressParam: IPv4 or IPv6 IP addresses
+  - IPv4AddressParam: IPv4 IP addresses
+  - IPv6AddressParam: IPv6 IP addresses
+- Update main README
+
 ## [0.0.1] - 2020-03-19
 
 - Initial release
