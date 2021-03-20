@@ -2,7 +2,7 @@
 
 """
 
-Click Parameter Types - Domains
+Click Parameter Types - Email Addresses
 
 """
 
