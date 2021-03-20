@@ -7,6 +7,9 @@ These types are useful for IP networking purposes.
     - [IPNetworkParam](#ipnetworkparam)
     - [IPv4NetworkParam](#ipv4networkparam)
     - [IPv6NetworkParam](#ipv6networkparam)
+    - [IPNetworkStringParam](#ipnetworkstringparam)
+    - [IPv4NetworkStringParam](#ipv4networkstringparam)
+    - [IPv6NetworkStringParam](#ipv6networkstringparam)
   - [IP Addresses](#ip-addresses)
     - [IPAddressParam](#ipaddressparam)
     - [IPv4AddressParam](#ipv4addressparam)
@@ -67,6 +70,57 @@ from clicktypes.network import IPv6NetworkParam
     nargs           = -1,
     required        = True,
     type            = IPv6NetworkParam(),
+)
+```
+
+### IPNetworkStringParam
+
+Validate and normalize provided value into an IPv4 or IPv6 network and return as string.
+
+Example usage:
+
+```python
+from clicktypes.network import IPNetworkStringParam
+
+@click.argument(
+    'network',
+    nargs           = -1,
+    required        = True,
+    type            = IPNetworIPNetworkStringParamkParam(),
+)
+```
+
+### IPv4NetworkStringParam
+
+Validate and normalize provided value into an IPv4 network and return as string.
+
+Example usage:
+
+```python
+from clicktypes.network import IPv4NetworkStringParam
+
+@click.argument(
+    'network',
+    nargs           = -1,
+    required        = True,
+    type            = IPv4NetworkStringParam(),
+)
+```
+
+### IPv6NetworkStringParam
+
+Validate and normalize provided value into an IPv6 network and return as string.
+
+Example usage:
+
+```python
+from clicktypes.network import IPv6NetworkStringParam
+
+@click.argument(
+    'network',
+    nargs           = -1,
+    required        = True,
+    type            = IPv6NetworkStringParam(),
 )
 ```
 

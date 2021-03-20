@@ -3,7 +3,8 @@
 # Import relevant classes for networking
 
 ## IP Networks
-from .network import IPNetworkParam, IPv4NetworkParam, IPv6NetworkParam
+from .network import ( IPNetworkParam, IPv4NetworkParam, IPv6NetworkParam,
+                     IPNetworkStringParam, IPv4NetworkStringParam, IPv6NetworkStringParam )
 
 ## IP Addresses
 from .address import ( IPAddressParam, IPv4AddressParam, IPv6AddressParam,

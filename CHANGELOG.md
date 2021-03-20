@@ -5,6 +5,7 @@ Python `clicktypes` changelog.
 ## [0.0.5] - Unreleased
 
 - Add IPStringParam, IPv4StringParam and IPv6StringParam
+- Add IPNetworkStringParam, IPv4NetworkStringParam and IPv6NetworkStringParam
 
 ## [0.0.4] - 2020-03-20
 
