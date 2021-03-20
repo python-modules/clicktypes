@@ -7,3 +7,9 @@ The types are grouped in to folders by purpose.
 Parameter types for IP addresses, network addresses etc.
 
 [README](network/README.md)
+
+## Web
+
+Parameter types for domains and email addresses.
+
+[README](web/README.md)
