@@ -2,9 +2,10 @@
 
 Python `clicktypes` changelog.
 
-## [0.0.4] - Unreleased
+## [0.0.4] - 2020-03-20
 
 - Add UrlParam
+- Add missing dependancy on 'validators'
 
 ## [0.0.3] - 2020-03-20
 
