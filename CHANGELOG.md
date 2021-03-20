@@ -2,6 +2,10 @@
 
 Python `clicktypes` changelog.
 
+## [0.0.4] - Unreleased
+
+- Add UrlParam
+
 ## [0.0.3] - 2020-03-20
 
 - Add DomainParam

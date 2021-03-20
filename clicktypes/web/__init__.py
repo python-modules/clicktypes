@@ -7,3 +7,6 @@ from .email import EmailParam
 
 ## Domains
 from .domain import DomainParam
+
+## URL
+from .url import UrlParam

@@ -2,6 +2,14 @@
 
 These types are useful for web purposes.
 
+- [Clicktypes - Networking](#clicktypes---networking)
+  - [Email Addresses](#email-addresses)
+    - [EmailParam](#emailparam)
+  - [Domains](#domains)
+    - [DomainParam](#domainparam)
+  - [URL](#url)
+    - [UrlParam](#urlparam)
+
 ## Email Addresses
 
 Validation/normalization for email addresses.
@@ -41,5 +49,26 @@ from clicktypes.web import DomainParam
     nargs           = -1,
     required        = True,
     type            = DomainParam(),
+)
+```
+
+## URL
+
+Validation/normalization for URL's.
+
+### UrlParam
+
+Used to validate URL's.
+
+Example usage:
+
+```python
+from clicktypes.web import UrlParam
+
+@click.argument(
+    'url',
+    nargs           = -1,
+    required        = True,
+    type            = UrlParam(),
 )
 ```
