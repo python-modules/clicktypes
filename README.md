@@ -36,3 +36,20 @@ from clicktypes.network import IPAddressParam
 ```
 
 This will validate the IP or IP's provided are IPv4 or IPv6 addresses and return them as an `IPv4Address` or `IPv6Address` object.
+
+### Web
+
+If you accept an email address parameter:
+
+```python
+from clicktypes.web import EmailParam
+
+@click.argument(
+    'email',
+    nargs           = -1,
+    required        = True,
+    type            = EmailParam(),
+)
+```
+
+This will validate the email address provided matches an approved regex and it will convert it to lowercase.

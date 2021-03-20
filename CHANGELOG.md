@@ -2,6 +2,11 @@
 
 Python `clicktypes` changelog.
 
+## [0.0.3] - 2020-03-20
+
+- Add DomainParam
+- Add EmailParam
+
 ## [0.0.2] - 2020-03-20
 
 - [Add IP address params](clicktypes/network/README.md):
