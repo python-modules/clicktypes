@@ -96,3 +96,100 @@ class IPv6AddressParam(ParamType):
             self.fail(f'Exception validating "{value!r}" as an IPv6 IP address: {e}', param, context)
         else:
             return address
+
+class IPStringParam(ParamType):
+    """Validate the parameter is an IPv4/IPv6 address, normalize and return as a string.
+
+    Examples:
+        '192.0.2.0' will become '192.0.2.0'
+        '2001:0DB8:0004:3f:00::2' will become '2001:db8:4:3f::2'
+    """
+
+    def convert(self, value: str, param, context) -> str:
+        """The function which will perform validation or normalization
+
+        Arguments:
+            value (str): The IPv4/IPv6 address
+
+        Returns:
+            str: The validated and normalized IP address
+        """
+        ## Attempt address creation
+        try:
+            address: Union[IPv4Address, IPv6Address] = ip_address(value)
+        except ValueError:
+            ## Not a valid IPv4/IPv6 address
+            self.fail(f'Could not validate "{value!r}" as an IPv4 or IPv6 IP address')
+        except Exception as e:
+            ## Other exception types should be handled
+            self.fail(f'Exception validating "{value!r}" as an IPv4 or IPv6 IP address: {e}', param, context)
+
+        ## Convert now normalized IP address to string
+        address: str = f'{address}'
+
+        ## Return normalized IP address
+        return address
+
+class IPv4StringParam(ParamType):
+    """Validate the parameter is an IPv4 address, normalize and return as a string.
+
+    Examples:
+        '192.0.2.0' will become '192.0.2.0'
+    """
+
+    def convert(self, value: str, param, context) -> str:
+        """The function which will perform validation or normalization
+
+        Arguments:
+            value (str): The IPv4 address
+
+        Returns:
+            str: The validated and normalized IP address
+        """
+        ## Attempt address creation
+        try:
+            address: IPv4Address = IPv4Address(value)
+        except ValueError:
+            ## Not a valid IPv4 address
+            self.fail(f'Could not validate "{value!r}" as an IPv4 IP address')
+        except Exception as e:
+            ## Other exception types should be handled
+            self.fail(f'Exception validating "{value!r}" as an IPv4 IP address: {e}', param, context)
+
+        ## Convert now normalized IP address to string
+        address: str = f'{address}'
+
+        ## Return normalized IP address
+        return address
+
+class IPv6StringParam(ParamType):
+    """Validate the parameter is an IPv6 address, normalize and return as a string.
+
+    Examples:
+        '2001:0DB8:0004:3f:00::2' will become '2001:db8:4:3f::2'
+    """
+
+    def convert(self, value: str, param, context) -> str:
+        """The function which will perform validation or normalization
+
+        Arguments:
+            value (str): The IPv6 address
+
+        Returns:
+            str: The validated and normalized IP address
+        """
+        ## Attempt address creation
+        try:
+            address: IPv6Address = IPv6Address(value)
+        except ValueError:
+            ## Not a valid IPv6 address
+            self.fail(f'Could not validate "{value!r}" as an IPv6 IP address')
+        except Exception as e:
+            ## Other exception types should be handled
+            self.fail(f'Exception validating "{value!r}" as an IPv6 IP address: {e}', param, context)
+
+        ## Convert now normalized IP address to string
+        address: str = f'{address}'
+
+        ## Return normalized IP address
+        return address
