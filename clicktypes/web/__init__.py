@@ -4,3 +4,6 @@
 
 ## Email addresses
 from .email import EmailParam
+
+## Domains
+from .domain import DomainParam

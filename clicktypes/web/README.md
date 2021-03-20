@@ -22,3 +22,24 @@ from clicktypes.web import EmailParam
     type            = EmailParam(),
 )
 ```
+
+## Domains
+
+Validation/normalization for domain names.
+
+### DomainParam
+
+Used to validate and convert domain names to lower case.
+
+Example usage:
+
+```python
+from clicktypes.web import DomainParam
+
+@click.argument(
+    'domain',
+    nargs           = -1,
+    required        = True,
+    type            = DomainParam(),
+)
+```
