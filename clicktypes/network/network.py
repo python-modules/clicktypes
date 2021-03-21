@@ -32,7 +32,7 @@ class IPNetworkParam(ParamType):
         """
         ## First attempt to create as IPv4 network
         try:
-            network: IPv4Network = IPv4Network(value)
+            network: IPv4Network = IPv4Network(value, strict = False)
         except ValueError:
             ## Does not appear to be an IPv4 IP or network; retry with IPv6
             pass
@@ -44,7 +44,7 @@ class IPNetworkParam(ParamType):
 
         ## Now try IPv6
         try:
-            network: IPv6Network = IPv6Network(value)
+            network: IPv6Network = IPv6Network(value, strict = False)
         except ValueError:
             ## Could not be validated as an IPv4 or IPv6 IP or network
             self.fail(f'Could not validate "{value!r}" as an IPv4 or IPv6 IP or network')
@@ -73,7 +73,7 @@ class IPv4NetworkParam(ParamType):
         """
         ## Attempt IPv4Network object creation
         try:
-            network: IPv4Network = IPv4Network(value)
+            network: IPv4Network = IPv4Network(value, strict = False)
         except ValueError:
             self.fail(f'Could not validate "{value!r}" as an IPv4 IP or network')
         except Exception as e:
@@ -100,7 +100,7 @@ class IPv6NetworkParam(ParamType):
         """
         ## Attempt IPv4Network object creation
         try:
-            network: IPv6Network = IPv6Network(value)
+            network: IPv6Network = IPv6Network(value, strict = False)
         except ValueError:
             self.fail(f'Could not validate "{value!r}" as an IPv6 IP or network')
         except Exception as e:
@@ -129,7 +129,7 @@ class IPNetworkStringParam(ParamType):
         """
         ## First attempt to create as IPv4 network
         try:
-            network: IPv4Network = IPv4Network(value)
+            network: IPv4Network = IPv4Network(value, strict = False)
         except ValueError:
             ## Does not appear to be an IPv4 IP or network; retry with IPv6
             network: None
@@ -140,7 +140,7 @@ class IPNetworkStringParam(ParamType):
         ## Now try IPv6
         if not network:
             try:
-                network: IPv6Network = IPv6Network(value)
+                network: IPv6Network = IPv6Network(value, strict = False)
             except ValueError:
                 ## Could not be validated as an IPv4 or IPv6 IP or network
                 self.fail(f'Could not validate "{value!r}" as an IPv4 or IPv6 IP or network')
@@ -173,7 +173,7 @@ class IPv4NetworkStringParam(ParamType):
         """
         ## Attempt creation of IPv4Network object
         try:
-            network: IPv4Network = IPv4Network(value)
+            network: IPv4Network = IPv4Network(value, strict = False)
         except ValueError:
             ## Does not appear to be an IPv4 IP or network
             self.fail(f'Could not validate "{value!r}" as an IPv4 IP or network')
@@ -205,7 +205,7 @@ class IPv6NetworkStringParam(ParamType):
         """
         ## Attempt creation of IPv4Network object
         try:
-            network: IPv6Network = IPv6Network(value)
+            network: IPv6Network = IPv6Network(value, strict = False)
         except ValueError:
             ## Does not appear to be an IPv4 IP or network
             self.fail(f'Could not validate "{value!r}" as an IPv6 IP or network')
