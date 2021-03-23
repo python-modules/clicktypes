@@ -2,6 +2,10 @@
 
 Python `clicktypes` changelog.
 
+## [0.0.6] - 2020-03-23
+
+- Fix markdown links
+
 ## [0.0.5] - 2020-03-23
 
 - Add IPStringParam, IPv4StringParam and IPv6StringParam

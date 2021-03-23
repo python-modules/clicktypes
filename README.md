@@ -2,7 +2,7 @@
 
 Additional types for the [click](https://pypi.org/project/click/) module that I find useful.
 
-For a list of available types check the [README](clicktypes/README.md) file from the module.
+For a list of available types check the [README](https://github.com/python-modules/clicktypes/blob/master/clicktypes/README.md) file from the module.
 
 ## Installation
 
