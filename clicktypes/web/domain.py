@@ -9,6 +9,7 @@ Click Parameter Types - Domains
 from click import ParamType
 from validators import domain as domain_validator
 
+
 class DomainParam(ParamType):
     """Validate the parameter is a domain name. The parameter will be returned in lower case.
 
@@ -26,7 +27,7 @@ class DomainParam(ParamType):
             str: The normalized and validated domain name
         """
         ## Lower case domain
-        domain = f'{value.lower()}'
+        domain = f"{value.lower()}"
 
         ## Check if the email is valid
         if not domain_validator(domain):

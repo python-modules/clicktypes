@@ -12,6 +12,7 @@ from click import ParamType
 from ipaddress import ip_address, IPv4Address, IPv6Address
 from typing import Union
 
+
 class IPAddressParam(ParamType):
     """Validate the parameter is an IPv4/IPv6 address and normalize into an IPv4Address or IPv6Address object.
 
@@ -37,9 +38,14 @@ class IPAddressParam(ParamType):
             self.fail(f'Could not validate "{value!r}" as an IPv4 or IPv6 IP address')
         except Exception as e:
             ## Other exception types should be handled
-            self.fail(f'Exception validating "{value!r}" as an IPv4 or IPv6 IP address: {e}', param, context)
+            self.fail(
+                f'Exception validating "{value!r}" as an IPv4 or IPv6 IP address: {e}',
+                param,
+                context,
+            )
         else:
             return address
+
 
 class IPv4AddressParam(ParamType):
     """Validate the parameter is an IPv4 address and normalize into an IPv4Address object.
@@ -65,9 +71,14 @@ class IPv4AddressParam(ParamType):
             self.fail(f'Could not validate "{value!r}" as an IPv4 IP address')
         except Exception as e:
             ## Other exception types should be handled
-            self.fail(f'Exception validating "{value!r}" as an IPv4 IP address: {e}', param, context)
+            self.fail(
+                f'Exception validating "{value!r}" as an IPv4 IP address: {e}',
+                param,
+                context,
+            )
         else:
             return address
+
 
 class IPv6AddressParam(ParamType):
     """Validate the parameter is an IPv6 address and normalize into an IPv6Address object.
@@ -93,9 +104,14 @@ class IPv6AddressParam(ParamType):
             self.fail(f'Could not validate "{value!r}" as an IPv6 IP address')
         except Exception as e:
             ## Other exception types should be handled
-            self.fail(f'Exception validating "{value!r}" as an IPv6 IP address: {e}', param, context)
+            self.fail(
+                f'Exception validating "{value!r}" as an IPv6 IP address: {e}',
+                param,
+                context,
+            )
         else:
             return address
+
 
 class IPStringParam(ParamType):
     """Validate the parameter is an IPv4/IPv6 address, normalize and return as a string.
@@ -122,13 +138,18 @@ class IPStringParam(ParamType):
             self.fail(f'Could not validate "{value!r}" as an IPv4 or IPv6 IP address')
         except Exception as e:
             ## Other exception types should be handled
-            self.fail(f'Exception validating "{value!r}" as an IPv4 or IPv6 IP address: {e}', param, context)
+            self.fail(
+                f'Exception validating "{value!r}" as an IPv4 or IPv6 IP address: {e}',
+                param,
+                context,
+            )
 
         ## Convert now normalized IP address to string
-        address: str = f'{address}'
+        address: str = f"{address}"
 
         ## Return normalized IP address
         return address
+
 
 class IPv4StringParam(ParamType):
     """Validate the parameter is an IPv4 address, normalize and return as a string.
@@ -154,13 +175,18 @@ class IPv4StringParam(ParamType):
             self.fail(f'Could not validate "{value!r}" as an IPv4 IP address')
         except Exception as e:
             ## Other exception types should be handled
-            self.fail(f'Exception validating "{value!r}" as an IPv4 IP address: {e}', param, context)
+            self.fail(
+                f'Exception validating "{value!r}" as an IPv4 IP address: {e}',
+                param,
+                context,
+            )
 
         ## Convert now normalized IP address to string
-        address: str = f'{address}'
+        address: str = f"{address}"
 
         ## Return normalized IP address
         return address
+
 
 class IPv6StringParam(ParamType):
     """Validate the parameter is an IPv6 address, normalize and return as a string.
@@ -186,10 +212,14 @@ class IPv6StringParam(ParamType):
             self.fail(f'Could not validate "{value!r}" as an IPv6 IP address')
         except Exception as e:
             ## Other exception types should be handled
-            self.fail(f'Exception validating "{value!r}" as an IPv6 IP address: {e}', param, context)
+            self.fail(
+                f'Exception validating "{value!r}" as an IPv6 IP address: {e}',
+                param,
+                context,
+            )
 
         ## Convert now normalized IP address to string
-        address: str = f'{address}'
+        address: str = f"{address}"
 
         ## Return normalized IP address
         return address

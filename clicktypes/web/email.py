@@ -9,6 +9,7 @@ Click Parameter Types - Email Addresses
 from click import ParamType
 from validators import email as email_validator
 
+
 class EmailParam(ParamType):
     """Validate the parameter is an email address. The email address will be converted to lower case and returned if valid.
 
@@ -26,7 +27,7 @@ class EmailParam(ParamType):
             str: The normalized and validated email address
         """
         ## Lower case email
-        email = f'{value.lower()}'
+        email = f"{value.lower()}"
 
         ## Check if the email is valid
         if not email_validator(email):

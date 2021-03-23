@@ -9,6 +9,7 @@ Click Parameter Types - URL
 from click import ParamType
 from validators import url as url_validator
 
+
 class UrlParam(ParamType):
     """Validate the parameter is a URL.
 
@@ -26,7 +27,7 @@ class UrlParam(ParamType):
             str: The validated URL
         """
         ## Make sure URL is a string
-        url = f'{value}'
+        url = f"{value}"
 
         ## Check if the URL is valid
         if not url_validator(url):
