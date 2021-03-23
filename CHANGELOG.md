@@ -8,6 +8,7 @@ Python `clicktypes` changelog.
 - Add IPNetworkStringParam, IPv4NetworkStringParam and IPv6NetworkStringParam
 - Add basic tests
 - Remove strict validation for network parameters
+- Reformat files with `black`
 
 ## [0.0.4] - 2020-03-20
 
