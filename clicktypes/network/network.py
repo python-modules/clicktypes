@@ -22,6 +22,8 @@ class IPNetworkParam(ParamType):
         '192.168.1.1/24' will become IPv4Network('192.0.2.0/24')
     """
 
+    name = 'network'
+
     def convert(self, value: str, param, context) -> Union[IPv4Network, IPv6Network]:
         """The function which will perform validation or normalization
 
@@ -74,6 +76,8 @@ class IPv4NetworkParam(ParamType):
         '192.168.1.1/24' will become IPv4Network('192.0.2.0/24')
     """
 
+    name = 'IPv4 network'
+
     def convert(self, value: str, param, context) -> IPv4Network:
         """The function which will perform validation or normalization
 
@@ -105,6 +109,8 @@ class IPv6NetworkParam(ParamType):
     Examples:
         '2001:0DB8:0004:3f:00::2' will become IPv6Network('2001:db8:4:3f::2/128')
     """
+
+    name = 'IPv6 network'
 
     def convert(self, value: str, param, context) -> IPv6Network:
         """The function which will perform validation or normalization
@@ -139,6 +145,8 @@ class IPNetworkStringParam(ParamType):
         '2001:0DB8:0004:3f:00::2' will become '2001:db8:4:3f::2/128'
         '192.168.1.1/24' will become '192.0.2.0/24'
     """
+
+    name = 'network'
 
     def convert(self, value: str, param, context) -> str:
         """The function which will perform validation or normalization
@@ -195,6 +203,8 @@ class IPv4NetworkStringParam(ParamType):
         '192.168.1.1/24' will become '192.0.2.0/24'
     """
 
+    name = 'IPv4 network'
+
     def convert(self, value: str, param, context) -> str:
         """The function which will perform validation or normalization
 
@@ -231,6 +241,8 @@ class IPv6NetworkStringParam(ParamType):
     Examples:
         '2001:0DB8:0004:3f:00::2' will become '2001:db8:4:3f::2/128'
     """
+
+    name = 'IPv6 network'
 
     def convert(self, value: str, param, context) -> str:
         """The function which will perform validation or normalization

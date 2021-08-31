@@ -17,6 +17,8 @@ class DomainParam(ParamType):
         'eXamPle.com' becomes 'example.com'
     """
 
+    name = 'domain'
+
     def convert(self, value: str, param, context) -> str:
         """The function which will perform validation or normalization
 

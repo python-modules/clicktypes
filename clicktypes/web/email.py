@@ -17,6 +17,8 @@ class EmailParam(ParamType):
         'tEsT@exAmple.com' becomes 'test@example.com'
     """
 
+    name = 'email'
+
     def convert(self, value: str, param, context) -> str:
         """The function which will perform validation or normalization
 

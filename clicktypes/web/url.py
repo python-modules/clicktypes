@@ -17,6 +17,8 @@ class UrlParam(ParamType):
         'https://example.com/?test=test'
     """
 
+    name = 'URL'
+
     def convert(self, value: str, param, context) -> str:
         """The function which will perform validation or normalization
 
